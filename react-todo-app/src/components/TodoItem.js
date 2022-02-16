@@ -5,12 +5,6 @@ import { FaTrash } from "react-icons/fa";
 const TodoItem = (props) => {
   const [editing, setEditing] = useState(false)
 
-  useEffect(() => {
-    return () => {
-      console.log("Cleaning up...")
-    }
-  }, [])
-
   const handleEditing = () => {
     setEditing(true)
   } 

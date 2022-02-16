@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Route, Switch } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import Header from "./Header"
 import InputTodo from "./InputTodo"
 import TodosList from "./TodosList";
@@ -12,16 +12,6 @@ import Navbar from "./Navbar";
 const TodoContainer = () => {
 
   const [todos, setTodos] = useState(getInitialTodos())
-
-  // useEffect(() => {
-  //   // getting stored items
-  //   const temp = localStorage.getItem("todos")
-  //   const loadedTodos = JSON.parse(temp)
-
-  //   if (loadedTodos) {
-  //     setTodos(loadedTodos)
-  //   }
-  // }, [])
 
   useEffect(() => {
     // storing todos items
@@ -78,7 +68,7 @@ const TodoContainer = () => {
   return (   
     <>
       <Navbar />
-      <Switch>
+      <Routes>
         <Route exact path="/">
           <div className="container">
             <div className="inner">
@@ -99,7 +89,7 @@ const TodoContainer = () => {
         <Route path="*">
           <NotMatch />
         </Route>
-      </Switch>
+      </Routes>
     </>
   );
 }
